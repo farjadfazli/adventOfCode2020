@@ -252,3 +252,19 @@ print(num1,num2,num1*num2)
 # num1: 696
 # num2: 1324
 # answer = num1 * num2 = 921504 (correct!)
+
+# Part 2
+
+import itertools
+import math
+
+result = []
+# we use itertools.combinations to make 3-tuples of the elements in input
+for threeNums in itertools.combinations(input, 3):
+    # then we check each 3-tuple to see if the elements add up to 2020
+    if sum(list(threeNums)) == 2020:
+        result = list(threeNums)
+# finally we use math.prod to obtain the product of the three relevant elements
+product = math.prod(result)
+print(product)
+# output: 195700142 (correct!)

@@ -252,3 +252,16 @@ print(num1,num2,num1*num2)
 # num1: 696
 # num2: 1324
 # answer = num1 * num2 = 921504 (correct!)
+
+# Part 2
+
+import itertools
+import math
+input.sort()
+result = []
+for threeNums in itertools.combinations(input, 3):
+    if sum(list(threeNums)) == 2020:
+        result = list(threeNums)
+product = math.prod(result)
+print(product)
+# output: 195700142 (correct!)
